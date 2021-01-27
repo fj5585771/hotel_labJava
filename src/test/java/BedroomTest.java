@@ -19,12 +19,38 @@ public class BedroomTest {
     }
 
     @Test
-    public void hadNumber(){
+    public void hasNumber(){
         assertEquals(69, boudoir.getRoomNum());
     }
 
     @Test
     public void hasCapacity(){
         assertEquals(16, boudoir.getCapacity());
+    }
+
+    @Test
+    public void hasGuestsNumber(){
+        assertEquals(0, boudoir.getGuestsNum());
+    }
+
+    @Test
+    public void hasRoomType(){
+        assertEquals("Boudoir", boudoir.getRoomType());
+    }
+
+    @Test
+    public void canAddGuest(){
+        Guest jim = new Guest("Jim");
+        boudoir.addGuest(jim);
+        assertEquals(1, boudoir.getGuestsNum());
+    }
+
+    @Test
+    public void canRemoveGuest(){
+        Guest jim = new Guest("Jim");
+        boudoir.addGuest(jim);
+        assertEquals(1, boudoir.getGuestsNum());
+        boudoir.removeGuest();
+        assertEquals(0, boudoir.getGuestsNum());
     }
 }

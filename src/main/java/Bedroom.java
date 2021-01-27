@@ -10,7 +10,7 @@ public class Bedroom {
     public Bedroom(int number, int capacity, String type) {
         this.number = number;
         this.capacity = capacity;
-        this.occupants = new ArrayList<>();
+        this.occupants = new ArrayList<Guest>();
         this.type = type;
     }
 
@@ -26,5 +26,15 @@ public class Bedroom {
         return occupants.size();
     }
 
-    public
+    public String getRoomType(){
+        return type;
+    }
+
+    public void addGuest(Guest guest){
+        occupants.add(guest);
+    }
+
+    public Guest removeGuest(){
+        return occupants.remove(0);
+    }
 }
